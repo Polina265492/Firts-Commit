@@ -1,59 +1,47 @@
-# class Grandparent:
-#     height = 170
-#     satiety = 100
-#     age = 60
-#
-#
-# class Parent(Grandparent):
-#     age = 40
-#
-#
-# class Child(Parent):
-#     height = 90
-#
-#     def __init__(self):
-#         print(self.height)
-#         print(self.satiety)
-#         print(self.age)
-#
-#
-# nick = Child()
+#1) Записати до файлу:
+#- Назву товару
+#- Кількість відгуків
+#- Ціну
+
+import requests
+from bs4 import BeautifulSoup
+import lxml
+
+url = "https://allo.ua/ua/products/mobile/poco-x5-pro-5g-8-256-black.html"
+user = "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Mobile Safari/537.36"
+headers = {"User-agent": user}
 
 
-class Hello_world:
-    hello ="Hello"
-    _hello = "_Hello"
-    __hello = "__Hello"
+if responce_code == 200:
+    soup = BeautifulSoup(responce.text, features:"lxml")
+    elements =soup.find(name: "div", class_="snap-slider with-pagination")
+    for i in all_products:
+        try:
+            if i.find('div', class = '<span class="sum">13&nbsp;499<span class="currency"> ₴ </span></span>')
+            print(price.text)
+        expect Exception:
 
-    def __init__(self):
-        self.world = "world"
-        self._world = "_world"
-        self.__world = "__world"
-    def printer(self):
-        print(self.hello)
-        print(self._hello)
-        print(self.__hello)
-        print(self.world)
-        print(self._world)
-        print(self.__world)
-    def _get_printer(self):
-        print(self.hello)
-        print(self._hello)
-        print(self.__hello)
-        print(self.world)
-        print(self._world)
-        print(self.__world)
+          print('Нету скидки')
 
-class Hi(Hello_world):
-    def hi_print(self):
-        print(self.hello)
-        print(self.world)
-        print(self._hello)
-        print(self._world)
-        print(self.__hello)
-        print(self.__world)
-hello = Hello_world()
-hello.printer()
-hello._get_printer()
-# hi = Hi()
-# hi.hi_print()
+name:"POCO X5 Pro 5G 8/256 Black"
+#Не знаю как написать про скидку
+
+
+
+#=#2) Спарсити тільки ті товари, які мають знижку
+# Записати до файлу:
+#- Назву товару
+#- Кількість відгуків
+#- Ціну
+
+import requests
+from bs4 import BeautifulSoup
+import lxml
+
+
+url = "https://allo.ua/ua/televizory/"
+user = "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Mobile Safari/537.36"
+headers = {"User-agent": user}
+
+
+#дальше не знаю что писать что бы код нашел товары со скидками
